@@ -1,0 +1,6 @@
+framework module Pods_MoustacheDemo {
+  umbrella header "Pods-MoustacheDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}

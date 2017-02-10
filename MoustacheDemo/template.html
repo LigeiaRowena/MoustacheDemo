@@ -1,0 +1,70 @@
+<html>
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <title>GRMustache example</title>
+</head>
+<body>
+    
+    <div>
+        {{! this is a comment }}
+    </div>
+    
+    <div>
+        {{! condition: if flag=true it prints the string "name", else prints the number "value" }}
+        {{#flag}}
+            <b>string: {{name}}</b>
+        {{^flag}}
+            <b>number: {{value}}</b>
+        {{/flag}}
+    </div>
+    
+    <div>
+        {{! short condition: if flag=true it prints the string "name", else prints the number "value" }}
+        {{#flag}}
+            <b>string: {{name}}</b>
+        {{^}}
+            <b>number: {{value}}</b>
+        {{/}}
+    </div>
+    
+    <div>
+        {{! checks in an array is empty or not }}
+        {{^ isEmpty(list) }}
+            <b>List: {{list}}</b>
+            <b>List count: {{list.count}}</b>
+        {{/ isEmpty(list) }}
+    </div>
+    
+    <div>
+    {{! iterates an array }}
+    {{# each(list) }}
+        <b>Index of array: {{ @index }}</b>
+    {{/}}
+    <div>
+        
+    <div>
+        {{! prints the content of a map/dictionary }}
+        <b>Map: {{map}}</b>
+    </div>
+    
+    <div>
+        {{! prints filtered string }}
+        <b>Uppercase string: {{uppercase(name)}}</b>
+        <b>Uppercase keypath string: {{uppercase(person.name)}}</b>
+        <b>Capitalized string: {{capitalized(name)}}</b>
+        <b>Lowercase string: {{lowercase(name)}}</b>
+    </div>
+    
+    
+    <div>
+        {{! prints an object property, the Person object is included in the object rendered}}
+        <b>Person: {{person.name}} {{person.value}}</b>
+    </div>
+    
+    <div>
+        {{! prints an object property: the Person object is directly rendered}}
+        <b>Person: {{name}} {{value}}</b>
+    </div>
+    
+</body>
+</html>
